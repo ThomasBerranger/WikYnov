@@ -12,7 +12,7 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
     </head>
     <body>
     <form action="" class="formulaire" method="post">
-        <input type="text" name="identifiant" id="identifiant" placeholder="Identifiant" required="required" style="text-align:center"/>
+        <input type="text" name="identifiant" id="identifiant" placeholder="Prénom" required="required" style="text-align:center"/>
         <input type="text" name="nom" id="nom" placeholder="Nom" required="required" style="text-align:center" />
         <input type="email" name="mail" id="mail" placeholder="Email" required="required" style="text-align:center"/>
         <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" required="required" style="text-align:center"/>
@@ -29,9 +29,10 @@ if(!empty($_POST['identifiant']) AND !empty($_POST['nom']) AND !empty($_POST['ma
     $identifiant = htmlspecialchars($_POST['identifiant']);
     $mail = htmlspecialchars($_POST['mail']);
     $nom = htmlspecialchars($_POST['nom']);
-
-    $mdp = sha1($_POST['mdp']);
-    $mdp2 = $mdp;
+    $salt = 'phoenix2429';
+    $salt2 = '411salt';
+    $mdp = sha1($salt.($_POST['mdp']).$salt2);
+    $mdp2 = sha1($salt.($_POST['mdp2']).$salt2);
     $identifiantlength = strlen($identifiant);
     if($identifiantlength <= 50 )
     {
@@ -39,7 +40,7 @@ if(!empty($_POST['identifiant']) AND !empty($_POST['nom']) AND !empty($_POST['ma
         {
             $insertmbr = $bdd->prepare("INSERT INTO coordonnees(identifiant, nom, mail, mdp) VALUES (?,?,?,?)");
             $insertmbr -> execute(array($identifiant, $nom, $mail, $mdp));
-            header("Location: connexion.php");
+            header("Location: index.php");
 
         }
         else
