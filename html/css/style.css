@@ -1,3 +1,13 @@
+.image
+{
+    width: 250px;
+    margin-top: 25px;
+}
+
+body
+{
+    text-align: center;
+}
 .btngreen {
     color: green;
     position: absolute;
@@ -18,8 +28,38 @@
     text-align: center;
 }
 
-.image
+.image-nav
 {
     height: 30px;
     width: auto;
+}
+
+.formulaire
+{
+    text-align: center;
+}
+
+.formu
+{
+    margin: 8px;
+    width: 65%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.button
+{
+    margin: 20px;
+    width: 35%;
+    height: 50px;
+    border-radius: 5px;
+    color: rgb(255,45,90);
+}
+
+@media screen and (max-width: 300px) {
+    .image
+    {
+        width: 80%;
+    }
+
 }

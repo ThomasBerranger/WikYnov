@@ -1,55 +1,75 @@
 <?php
+session_start();
 $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
 
 ?>
 
-    <!doctype html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title> WIKYNOV </title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-    <form action="" class="formulaire" method="post">
-        <input type="text" name="identifiant" id="identifiant" placeholder="Prénom" required="required" style="text-align:center"/>
-        <input type="text" name="nom" id="nom" placeholder="Nom" required="required" style="text-align:center" />
-        <input type="email" name="mail" id="mail" placeholder="Email" required="required" style="text-align:center"/>
-        <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" required="required" style="text-align:center"/>
-        <input type="password" id="mdp2" name="mdp2" placeholder="Confirmation" required="required" style="text-align:center"/>
-        <button type="submit" class="button" name="formInscription">Je m'inscris</button>
-    </form>
-    </body>
-    </html>
-
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title> WIKYNOV </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<form class="formulaire" action="" method="post">
+    <input type="text" name="identifiantConnexion" placeholder="Identifiant" required="required" style="text-align: center"/>
+    <input type="password" name="mdpConnexion" placeholder="Mot de passe" required="required" style="text-align: center"/>
+    <button type="submit" class="button-enter" name="formConnexion">Entrer</button>
+    <button><a href="inscription.php">inscrip</a></button>
+</form>
 <?php
-
-if(!empty($_POST['identifiant']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2']))
+if(isset($_POST['formConnexion']))
 {
-    $identifiant = htmlspecialchars($_POST['identifiant']);
-    $mail = htmlspecialchars($_POST['mail']);
-    $nom = htmlspecialchars($_POST['nom']);
+    $identifiantConnexion = htmlspecialchars($_POST['identifiantConnexion']);
     $salt = 'phoenix2429';
     $salt2 = '411salt';
-    $mdp = sha1($salt.($_POST['mdp']).$salt2);
-    $mdp2 = sha1($salt.($_POST['mdp2']).$salt2);
-    $identifiantlength = strlen($identifiant);
-    if($identifiantlength <= 50 )
+    $mdpConnexion = sha1($salt.($_POST['mdpConnexion']).$salt2);
+    if(!empty($identifiantConnexion) AND !empty($mdpConnexion))
     {
-        if($mdp == $mdp2)
+        $requser = $bdd->prepare("SELECT * FROM coordonnees WHERE identifiant = ? AND mdp = ?");
+        $requser->execute(array($identifiantConnexion, $mdpConnexion)) ;
+        $userexist = $requser -> rowCount();
+        if ($userexist == 1)
         {
-            $insertmbr = $bdd->prepare("INSERT INTO coordonnees(identifiant, nom, mail, mdp) VALUES (?,?,?,?)");
-            $insertmbr -> execute(array($identifiant, $nom, $mail, $mdp));
-            header("Location: index.php");
-
+            $userinfo = $requser -> fetch();
+            $_SESSION['id'] = $userinfo['id'];
+            $_SESSION['identifiant'] = $userinfo['identifiant'];
+            $_SESSION['mail'] = $userinfo['mail'];
+            header("Location: connexion.php?id=".$_SESSION['id']);
         }
         else
         {
-            ?> <div class="erreur"><?php echo'Vos mots de passe ne sont pas identiques !';?> </div> <?php
+            ?> <div class="erreur"><?php echo'Mauvais identifiant ou mot de passe !';?> </div> <?php
         }
     }
     else
     {
-        ?> <div class="erreur"><?php echo'Votre pseudo ne doit pas dépasser les 50 caractères !';?> </div> <?php
+        $erreur = "Tous les champs doivent être complétés !";
     }
 }
+?>
+
+</body>
+</html>
+
+
+<?php
+/*
+require 'models/User.php';
+$user = new User();
+$user->setName('Ducerf')
+    ->setFirstName('Alexis')
+    ->setPassword('toto')
+    ->setEmail('alexis.ducerf@deercoders.com');
+echo '<pre>';
+var_dump($user);
+echo '</pre>';
+$user2 = new User(null, 'Ducerf', 'Alexis', 'toto','alexis.ducerf@deercoders.com');
+echo '<pre>';
+var_dump($user2);
+echo '</pre>';
+*/
+
+//$u = new Users();
+//$u->view(2);
