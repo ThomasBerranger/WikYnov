@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f496d584-3e1d-42c1-89de-145642ad8d8e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/abonne.php" afterPath="$PROJECT_DIR$/html/abonne.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/admin.php" afterPath="$PROJECT_DIR$/html/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/auteur.php" afterPath="$PROJECT_DIR$/html/auteur.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/css/style.css" afterPath="$PROJECT_DIR$/html/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.php" afterPath="$PROJECT_DIR$/html/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/inscription.php" afterPath="$PROJECT_DIR$/html/inscription.php" />
     </list>
     <ignored path="WikYnov.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +29,8 @@
       <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+            <state vertical-scroll-proportion="-0.7352941">
+              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -56,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/html/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -85,7 +81,7 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.7352941">
               <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
               <folding>
                 <marker date="1462372230092" expanded="true" signature="643:805" placeholder="INSERT INTO users... " />
@@ -130,13 +126,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6007371">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.8009828">
+              <caret line="28" column="82" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
               <folding>
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1462523873996" expanded="true" signature="2268:2337" placeholder="INSERT INTO coordonnees... " />
-                <marker date="1462523873996" expanded="true" signature="3899:3958" placeholder="SELECT * FRO... coordonnees" />
+                <marker date="1462738373866" expanded="true" signature="2353:2430" placeholder="INSERT INTO coordonnees... " />
+                <marker date="1462738373866" expanded="true" signature="3999:4058" placeholder="SELECT * FRO... coordonnees" />
               </folding>
             </state>
           </provider>
@@ -169,8 +163,8 @@
         <option value="$PROJECT_DIR$/html/inscription.php" />
         <option value="$PROJECT_DIR$/html/auteur.php" />
         <option value="$PROJECT_DIR$/html/abonne.php" />
-        <option value="$PROJECT_DIR$/html/admin.php" />
         <option value="$PROJECT_DIR$/html/css/style.css" />
+        <option value="$PROJECT_DIR$/html/admin.php" />
         <option value="$PROJECT_DIR$/html/index.php" />
       </list>
     </option>
@@ -215,6 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -258,7 +253,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,8 +305,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="false" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.119791664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -373,10 +367,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1462523873996" expanded="true" signature="2268:2337" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462523873996" expanded="true" signature="3899:3958" placeholder="SELECT * FRO... coordonnees" />
+            <marker date="1462738373866" expanded="true" signature="2353:2430" placeholder="INSERT INTO coordonnees... " />
+            <marker date="1462738373866" expanded="true" signature="3999:4058" placeholder="SELECT * FRO... coordonnees" />
           </folding>
         </state>
       </provider>
@@ -465,10 +457,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1462523873996" expanded="true" signature="2268:2337" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462523873996" expanded="true" signature="3899:3958" placeholder="SELECT * FRO... coordonnees" />
+            <marker date="1462738373866" expanded="true" signature="2353:2430" placeholder="INSERT INTO coordonnees... " />
+            <marker date="1462738373866" expanded="true" signature="3999:4058" placeholder="SELECT * FRO... coordonnees" />
           </folding>
         </state>
       </provider>
@@ -554,10 +544,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1462523873996" expanded="true" signature="2268:2337" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462523873996" expanded="true" signature="3899:3958" placeholder="SELECT * FRO... coordonnees" />
+            <marker date="1462738373866" expanded="true" signature="2353:2430" placeholder="INSERT INTO coordonnees... " />
+            <marker date="1462738373866" expanded="true" signature="3999:4058" placeholder="SELECT * FRO... coordonnees" />
           </folding>
         </state>
       </provider>
@@ -643,10 +631,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1462523873996" expanded="true" signature="2268:2337" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462523873996" expanded="true" signature="3899:3958" placeholder="SELECT * FRO... coordonnees" />
+            <marker date="1462738373866" expanded="true" signature="2353:2430" placeholder="INSERT INTO coordonnees... " />
+            <marker date="1462738373866" expanded="true" signature="3999:4058" placeholder="SELECT * FRO... coordonnees" />
           </folding>
         </state>
       </provider>
@@ -663,10 +649,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1462523873996" expanded="true" signature="2268:2337" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462523873996" expanded="true" signature="3899:3958" placeholder="SELECT * FRO... coordonnees" />
+            <marker date="1462738373866" expanded="true" signature="2353:2430" placeholder="INSERT INTO coordonnees... " />
+            <marker date="1462738373866" expanded="true" signature="3999:4058" placeholder="SELECT * FRO... coordonnees" />
           </folding>
         </state>
       </provider>
@@ -683,10 +667,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1462523873996" expanded="true" signature="2268:2337" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462523873996" expanded="true" signature="3899:3958" placeholder="SELECT * FRO... coordonnees" />
+            <marker date="1462738373866" expanded="true" signature="2353:2430" placeholder="INSERT INTO coordonnees... " />
+            <marker date="1462738373866" expanded="true" signature="3999:4058" placeholder="SELECT * FRO... coordonnees" />
           </folding>
         </state>
       </provider>
@@ -733,27 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <marker date="1462372230092" expanded="true" signature="643:805" placeholder="INSERT INTO users... " />
-            <marker date="1462372230092" expanded="true" signature="1192:1224" placeholder="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding>
-            <marker date="1462446747323" expanded="true" signature="1045:1104" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/connexion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -796,31 +757,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin.php">
+    <entry file="file://$PROJECT_DIR$/html/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/css/style.css">
+    <entry file="file://$PROJECT_DIR$/html/inscription.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <marker date="1462446747323" expanded="true" signature="1045:1104" placeholder="SELECT * FRO... coordonnees" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7352941">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7352941">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <marker date="1462372230092" expanded="true" signature="643:805" placeholder="INSERT INTO users... " />
+            <marker date="1462372230092" expanded="true" signature="1192:1224" placeholder="SELECT * FRO... users" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6007371">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.8009828">
+          <caret line="28" column="82" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1462523873996" expanded="true" signature="2268:2337" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462523873996" expanded="true" signature="3899:3958" placeholder="SELECT * FRO... coordonnees" />
+            <marker date="1462738373866" expanded="true" signature="2353:2430" placeholder="INSERT INTO coordonnees... " />
+            <marker date="1462738373866" expanded="true" signature="3999:4058" placeholder="SELECT * FRO... coordonnees" />
           </folding>
         </state>
       </provider>

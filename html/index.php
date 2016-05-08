@@ -11,22 +11,22 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<img class="image" src="images/logo.png" alt="">
+<img class="image" src="images/logo.png" alt=""><br>
 
 <div class="row">
     <div class="col-md-6">
         <form action="" class="formulaire" method="post">
-            <h2>Inscription</h2>
+            <h1>Inscription</h1>
             <br><input class="formu" type="text" name="identifiant" id="identifiant" placeholder="Prénom" required="required" style="text-align:center"/><br>
             <input class="formu" type="text" name="nom" id="nom" placeholder="Nom" required="required" style="text-align:center" /><br>
             <input class="formu" type="email" name="mail" id="mail" placeholder="Email" required="required" style="text-align:center"/><br>
             <input class="formu" type="password" name="mdp" id="mdp" placeholder="Mot de passe" required="required" style="text-align:center"/><br>
             <input class="formu" type="password" id="mdp2" name="mdp2" placeholder="Confirmation" required="required" style="text-align:center"/><br><br>
             <label>
-                <input type="radio" name="choice" value="1" checked> Je suis actuellement étudiant à Ynov
+                <input type="radio" name="role" id="role0" value="0" checked> Je suis actuellement étudiant(e) à Ynov
             </label> <br>
             <label>
-                <input type="radio" name="choice" value="2"> Je suis un ancien étudiant d'Ynov
+                <input type="radio" name="role" id="role1" value="1"> Je suis un(e) ancien(ne) étudiant(e) d'Ynov
             </label> <br>
             <button type="submit" class="button" name="formInscription">Je m'inscris</button>
         </form>
@@ -38,6 +38,7 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
         $identifiant = htmlspecialchars($_POST['identifiant']);
         $mail = htmlspecialchars($_POST['mail']);
         $nom = htmlspecialchars($_POST['nom']);
+        $role = htmlspecialchars($_POST['role']);
         $salt = 'phoenix2429';
         $salt2 = '411salt';
         $mdp = sha1($salt.($_POST['mdp']).$salt2);
@@ -47,8 +48,8 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
         {
             if($mdp == $mdp2)
             {
-                $insertmbr = $bdd->prepare("INSERT INTO coordonnees(identifiant, nom, mail, mdp) VALUES (?,?,?,?)");
-                $insertmbr -> execute(array($identifiant, $nom, $mail, $mdp));
+                $insertmbr = $bdd->prepare("INSERT INTO coordonnees(identifiant, nom, mail, mdp, role) VALUES (?,?,?,?,?)");
+                $insertmbr -> execute(array($identifiant, $nom, $mail, $mdp, $role));
                 header("Location: connexion.php?id=".$_SESSION['id']);
                 ?> <div class="erreur"><?php echo'Votre inscription a bien été enregistrée';?> </div> <?php
 
@@ -68,7 +69,7 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
 
     <div class="col-md-6">
         <form class="formulaire" action="" method="post">
-            <h2>Connexion</h2>
+            <h1>Connexion</h1>
             <br><input class="formu" type="text" name="identifiantConnexion" placeholder="Adresse mail" required="required" style="text-align: center"/><br>
             <input class="formu" type="password" name="mdpConnexion" placeholder="Mot de passe" required="required" style="text-align: center"/><br>
             <button type="submit" class="button" name="formConnexion">Entrer</button>
