@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f496d584-3e1d-42c1-89de-145642ad8d8e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/abonne.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/admin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/auteur.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/connexion.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/controllers/Users.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/core/Database.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/images/logo-essai.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/inscription.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/models/User.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/views/users/create.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/views/users/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/views/users/view.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/abonne.php" afterPath="$PROJECT_DIR$/wiki/abonne.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/admin.php" afterPath="$PROJECT_DIR$/wiki/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/auteur.php" afterPath="$PROJECT_DIR$/wiki/auteur.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki/index.php" afterPath="$PROJECT_DIR$/wiki/index.php" />
     </list>
     <ignored path="WikYnov.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,73 +27,14 @@
     <favorites_list name="WikYnov" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+    <leaf>
       <file leaf-file-name="abonne.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wiki/abonne.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.522113">
+              <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
               <folding>
-                <marker date="1462787757653" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wiki/admin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7352941">
-              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-              <folding>
-                <marker date="1462787757668" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auteur.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wiki/auteur.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7352941">
-              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-              <folding>
-                <marker date="1462787757637" expanded="true" signature="218:256" placeholder="SELECT * FRO... coordonnees" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wiki/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1462784113540" expanded="true" signature="2414:2491" placeholder="INSERT INTO coordonnees... " />
-                <marker date="1462784113540" expanded="true" signature="4222:4281" placeholder="SELECT * FRO... coordonnees" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wiki/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inscription.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wiki/inscription.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.352941">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-              <folding>
-                <marker date="1462785848673" expanded="true" signature="1045:1104" placeholder="SELECT * FRO... coordonnees" />
+                <marker date="1462795249958" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
               </folding>
             </state>
           </provider>
@@ -141,9 +70,10 @@
         <option value="$PROJECT_DIR$/html/abonne.php" />
         <option value="$PROJECT_DIR$/html/connexion.php" />
         <option value="$PROJECT_DIR$/html/inscription.php" />
-        <option value="$PROJECT_DIR$/wiki/auteur.php" />
-        <option value="$PROJECT_DIR$/wiki/admin.php" />
+        <option value="$PROJECT_DIR$/wiki/index.php" />
         <option value="$PROJECT_DIR$/wiki/abonne.php" />
+        <option value="$PROJECT_DIR$/wiki/admin.php" />
+        <option value="$PROJECT_DIR$/wiki/auteur.php" />
       </list>
     </option>
   </component>
@@ -187,14 +117,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="WikYnov" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WikYnov" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WikYnov" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -213,6 +151,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,118 +245,10 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wiki/abonne.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.522113">
+          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
           <folding>
-            <marker date="1462787757653" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1462787757668" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/auteur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1462787757637" expanded="true" signature="218:256" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1462784113540" expanded="true" signature="2414:2491" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462784113540" expanded="true" signature="4222:4281" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1462785848673" expanded="true" signature="1045:1104" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.352941">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <marker date="1462785848673" expanded="true" signature="1045:1104" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1462784113540" expanded="true" signature="2414:2491" placeholder="INSERT INTO coordonnees... " />
-            <marker date="1462784113540" expanded="true" signature="4222:4281" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/auteur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7352941">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          <folding>
-            <marker date="1462787757637" expanded="true" signature="218:256" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7352941">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding>
-            <marker date="1462787757668" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki/abonne.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <marker date="1462787757653" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
+            <marker date="1462795249958" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
           </folding>
         </state>
       </provider>

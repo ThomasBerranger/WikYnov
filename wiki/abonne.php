@@ -35,9 +35,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Espace Abonné <span class="sr-only">(current)</span></a></li>
-                <li><a href="auteur.php">Espace Auteur</a></li>
-                <li><a href="admin.php">Espace Administrateur</a></li>
+                <li class="active"><a href="#"> Actualités <span class="sr-only">(current)</span></a></li>
+                <li><a href="#"> Multimédia </a></li>
+                <li><a href="#"> Thématiques </a></li>
+                <li><a href="#"> Profil </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" target="_blank" data-toggle="modal" data-target="#myModal">Déconnexion</a></li>
@@ -55,7 +56,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                 <!-- Contenue dans le corps -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btngreen">Oui</></button>
+                <button type="button" class="btngreen"><a href="index.php">Oui</a></></button>
                 <button type="button" class="btnred" data-dismiss="modal">Non</button>
                 <br><br><br>
             </div>
