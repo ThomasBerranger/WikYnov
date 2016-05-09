@@ -12,7 +12,7 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
 </head>
 <body>
 <img class="image" src="images/logo.png" alt=""><br>
-
+<div class="container">
 <div class="row">
     <div class="col-md-6">
         <form action="" class="formulaire" method="post">
@@ -95,7 +95,7 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
             {
                 $requser = $bdd->prepare("SELECT * FROM coordonnees WHERE identifiant = ? AND mdp = ?");
                 $requser->execute(array($identifiantConnexion, $mdpConnexion)) ;
-                $userexist = $requser -> rowCount();
+                $userexist = $requser->rowCount();
                 if ($userexist == 1)
                 {
                     $userinfo = $requser -> fetch();
@@ -103,16 +103,12 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
                     $_SESSION['identifiant'] = $userinfo['identifiant'];
                     $_SESSION['mail'] = $userinfo['mail'];
                     $_SESSION['role'] = $userinfo['role'];
-                    if($role == 0)
-                    {
+
+                    if($userinfo['role'] == 0) {
                         header("Location: auteur.php?id=".$_SESSION['id']);
-                    }
-                    elseif($role == 2)
-                    {
+                    } elseif($userinfo['role'] == 2) {
                         header("Location: admin.php?id=".$_SESSION['id']);
-                    }
-                    else
-                    {
+                    } else {
                         header("Location: abonne.php?id=".$_SESSION['id']);
                     }
                 }
@@ -129,7 +125,7 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
         ?>
     </div>
 </div>
-
+</div>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
