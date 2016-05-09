@@ -23,10 +23,10 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
             <input class="formu" type="password" name="mdp" id="mdp" placeholder="Mot de passe" required="required" style="text-align:center"/><br>
             <input class="formu" type="password" id="mdp2" name="mdp2" placeholder="Confirmation" required="required" style="text-align:center"/><br><br>
             <label>
-                <input type="radio" name="role" id="role0" value="0" checked> Je suis actuellement étudiant(e) à Ynov
+                <input type="radio" name="role" id="role0" value="0"> Je suis actuellement étudiant(e) à Ynov
             </label> <br>
             <label>
-                <input type="radio" name="role" id="role1" value="1"> Je suis un(e) ancien(ne) étudiant(e) d'Ynov
+                <input type="radio" name="role" id="role1" value="1" checked> Je suis un(e) ancien(ne) étudiant(e) d'Ynov
             </label> <br>
             <button type="submit" class="button" name="formInscription">Je m'inscris</button>
         </form>
@@ -35,10 +35,10 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
 
     if(!empty($_POST['identifiant']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2']))
     {
-        $identifiant = htmlspecialchars($_POST['identifiant']);
-        $mail = htmlspecialchars($_POST['mail']);
-        $nom = htmlspecialchars($_POST['nom']);
-        $role = htmlspecialchars($_POST['role']);
+        $identifiant = ($_POST['identifiant']);
+        $mail = ($_POST['mail']);
+        $nom = ($_POST['nom']);
+        $role = ($_POST['role']);
         $salt = 'phoenix2429';
         $salt2 = '411salt';
         $mdp = sha1($salt.($_POST['mdp']).$salt2);
@@ -46,18 +46,28 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
         $identifiantlength = strlen($identifiant);
         if($identifiantlength <= 50 )
         {
-            if($mdp == $mdp2)
+            $syntaxe="#^[a-z]+[.][a-z]+@ynov[.]com$#";
+            if(preg_match($syntaxe, $mail))
             {
-                $insertmbr = $bdd->prepare("INSERT INTO coordonnees(identifiant, nom, mail, mdp, role) VALUES (?,?,?,?,?)");
-                $insertmbr -> execute(array($identifiant, $nom, $mail, $mdp, $role));
-                header("Location: connexion.php?id=".$_SESSION['id']);
-                ?> <div class="erreur"><?php echo'Votre inscription a bien été enregistrée';?> </div> <?php
+                if($mdp == $mdp2)
+                {
+                    $insertmbr = $bdd->prepare("INSERT INTO coordonnees(identifiant, nom, mail, role, mdp) VALUES (?,?,?,?,?)");
+                    $insertmbr -> execute(array($identifiant, $nom, $mail, $role, $mdp));
+                    header("Location: abonne.php?id=".$_SESSION['id']);
 
+                    ?> <div class="erreur"><?php echo'Votre inscription a bien été enregistrée';?> </div> <?php
+
+                }
+                else
+                {
+                    ?> <div class="erreur"><?php echo'Vos mots de passe ne sont pas identiques !';?> </div> <?php
+                }
             }
             else
             {
-                ?> <div class="erreur"><?php echo'Vos mots de passe ne sont pas identiques !';?> </div> <?php
+                ?> <div class="erreur"><?php echo'Mauvaise adresse mail';?> </div> <?php
             }
+
         }
         else
         {
@@ -70,14 +80,14 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
     <div class="col-md-6">
         <form class="formulaire" action="" method="post">
             <h1>Connexion</h1>
-            <br><input class="formu" type="text" name="identifiantConnexion" placeholder="Adresse mail" required="required" style="text-align: center"/><br>
+            <br><input class="formu" type="text" name="identifiantConnexion" placeholder="Identifiant" required="required" style="text-align: center"/><br>
             <input class="formu" type="password" name="mdpConnexion" placeholder="Mot de passe" required="required" style="text-align: center"/><br>
             <button type="submit" class="button" name="formConnexion">Entrer</button>
         </form>
         <?php
         if(isset($_POST['formConnexion']))
         {
-            $identifiantConnexion = htmlspecialchars($_POST['identifiantConnexion']);
+            $identifiantConnexion = ($_POST['identifiantConnexion']);
             $salt = 'phoenix2429';
             $salt2 = '411salt';
             $mdpConnexion = sha1($salt.($_POST['mdpConnexion']).$salt2);
@@ -92,7 +102,19 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
                     $_SESSION['id'] = $userinfo['id'];
                     $_SESSION['identifiant'] = $userinfo['identifiant'];
                     $_SESSION['mail'] = $userinfo['mail'];
-                    header("Location: connexion.php?id=".$_SESSION['id']);
+                    $_SESSION['role'] = $userinfo['role'];
+                    if($role == 0)
+                    {
+                        header("Location: auteur.php?id=".$_SESSION['id']);
+                    }
+                    elseif($role == 2)
+                    {
+                        header("Location: admin.php?id=".$_SESSION['id']);
+                    }
+                    else
+                    {
+                        header("Location: abonne.php?id=".$_SESSION['id']);
+                    }
                 }
                 else
                 {

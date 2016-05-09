@@ -1,6 +1,13 @@
 <?php
-
-?><!DOCTYPE html>
+session_start();
+$bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
+if(isset($_GET['id']) AND $_GET['id'] > 0) {
+    $getid = intval($_GET['id']);
+    $requser = $bdd->prepare('SELECT * FROM coordonnees WHERE id = ?');
+    $requser->execute(array($getid));
+    $userinfo = $requser->fetch();
+?>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -25,19 +32,22 @@
             </button>
             <a class="navbar-brand" href="#"><img class="image-nav" src="images/logo.png" alt=""></a>
         </div>
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Espace Abonné <span class="sr-only">(current)</span></a></li>
+                <li><a href="abonne.php">Espace Abonné</a></li>
                 <li><a href="auteur.php">Espace Auteur</a></li>
-                <li><a href="admin.php">Espace Administrateur</a></li>
+                <li class="active"><a href="#">Espace Administrateur <span class="sr-only">(current)</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" target="_blank" data-toggle="modal" data-target="#myModal">Déconnexion</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-</nav>
+
+   </nav>
+
 <!--Apparition du bouton pour se déconnecter -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -55,6 +65,7 @@
         </div>
     </div>
 </div>
+<p>admin</p>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -65,5 +76,9 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+
 </body>
 </html>
+    <?php
+}
+?>

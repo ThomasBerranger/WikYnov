@@ -1,6 +1,14 @@
 <?php
+    session_start();
+    $bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
+    if(isset($_GET['id']) AND $_GET['id'] > 0) {
+        $getid = intval($_GET['id']);
+        $requser = $bdd->prepare('SELECT * FROM coordonnees WHERE id = ?');
+        $requser->execute(array($getid));
+        $userinfo = $requser->fetch();
+?>
 
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -57,6 +65,7 @@
         </div>
     </div>
 </div>
+<p>auteur</p>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -70,3 +79,6 @@
 
 </body>
 </html>
+    <?php
+}
+?>

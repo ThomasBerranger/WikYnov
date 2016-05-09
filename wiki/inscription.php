@@ -36,7 +36,7 @@ if(isset($_POST['formConnexion']))
             $_SESSION['id'] = $userinfo['id'];
             $_SESSION['identifiant'] = $userinfo['identifiant'];
             $_SESSION['mail'] = $userinfo['mail'];
-            header("Location: connexion.php?id=".$_SESSION['id']);
+            header("Location: conexion.php?id=".$_SESSION['id']);
         }
         else
         {
