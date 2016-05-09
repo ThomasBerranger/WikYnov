@@ -27,7 +27,24 @@
     <favorites_list name="WikYnov" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf />
+=======
+    <leaf>
+      <file leaf-file-name="abonne.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wiki/abonne.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.522113">
+              <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+              <folding>
+                <marker date="1462795249958" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> origin/inscription/connexion
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -229,4 +246,19 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/wiki/abonne.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.522113">
+          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+          <folding>
+            <marker date="1462795249958" expanded="true" signature="198:236" placeholder="SELECT * FRO... coordonnees" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+>>>>>>> origin/inscription/connexion
 </project>
