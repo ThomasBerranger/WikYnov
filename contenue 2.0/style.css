@@ -1,0 +1,106 @@
+.image
+{
+    width: 325px;
+    margin-top: 20px;
+}
+
+body
+{
+    text-align: center;
+}
+.btngreen {
+    color: green;
+    position: absolute;
+    left:30%;
+    width:80px;
+    height:50px;
+}
+.btnred {
+    color: red;
+    position: absolute;
+    left:60%;
+    width:80px;
+    height:50px;
+}
+
+.modal-title {
+    font-size:20px;
+    text-align: center;
+}
+
+.image-nav
+{
+    height: 30px;
+    width: auto;
+}
+
+.formulaire
+{
+    text-align: center;
+}
+
+.formu
+{
+    margin: 8px;
+    width: 65%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.button
+{
+    margin: 20px;
+    width: 35%;
+    height: 50px;
+    border-radius: 5px;
+    color: rgb(255,45,90);
+}
+
+@media screen and (max-width: 350px) {
+    .image
+    {
+        width: 80%;
+    }
+
+}
+
+.erreur {
+    color: #FF0000;
+}
+
+.cadre {
+    border:2px dotted black;
+    border-right: 1px;
+    width: 10%;
+    padding: 5px;
+    margin-right: auto;
+}
+
+.h1 {
+    color: #024378;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.h2 {
+    text-align: center;
+    text-decoration: none;
+    font-size: 70px;
+}
+
+.upload {
+    font-size: 50px;
+    border:2px dotted black;
+}
+
+.footer {
+    background-color: #024378;
+}
+
+.espace {
+    min-height: 77vh;
+}
+
+.nomauteur {
+    font-size: 20px;
+}
