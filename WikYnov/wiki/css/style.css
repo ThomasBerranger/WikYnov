@@ -7,7 +7,23 @@
 body
 {
     text-align: center;
+    color: rgb(255,45,90);
 }
+
+.img-fond
+{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    opacity: 0.6;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .btngreen {
     color: green;
@@ -35,6 +51,7 @@ body
     width: auto;
 }
 
+
 .formulaire
 {
     text-align: center;
@@ -43,7 +60,7 @@ body
 .formu
 {
     margin: 8px;
-    width: 65%;
+    width: 90%;
     height: 40px;
     border-radius: 5px;
 }
@@ -51,10 +68,33 @@ body
 .button
 {
     margin: 20px;
-    width: 35%;
+    width: 70%;
     height: 50px;
     border-radius: 5px;
     color: rgb(255,45,90);
+}
+
+.button1
+{
+    margin-top: 60%;
+    margin-bottom: 20px;
+    margin-right: 20%;
+    margin-left: 20pX;
+    width: 70%;
+    height: 60px;
+    border-radius: 5px;
+    color: rgb(255,45,90);
+}
+
+@media screen and (max-width: 1000px) {
+    .button1
+    {
+        margin: 20px;
+        width: 70%;
+        height: 50px;
+        border-radius: 5px;
+        color: rgb(255,45,90);
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -68,4 +108,10 @@ body
 .fichier
 {
     margin-left: 35%;
+}
+
+.erreur
+{
+    font-size: large;
+    color: rgb(255,45,90);
 }
