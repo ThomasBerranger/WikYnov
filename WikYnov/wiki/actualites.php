@@ -35,7 +35,7 @@ if(!isset($_SESSION['session']))
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"> Actualités <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="actualites.php"> Actualités <span class="sr-only">(current)</span></a></li>
                     <li><a href="multimedia.php"> Multimédia </a></li>
                     <li><a href="devoirs.php"> Forum/Devoirs </a></li>
                     <li><a href="thematique.php"> Thématiques </a></li>
@@ -76,16 +76,16 @@ if(!isset($_SESSION['session']))
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-    </body>
-    </html>
     <?php
     if($_SESSION['session']['role'] == 0) {
         echo 'actu auteur';
     } elseif($_SESSION['session']['role'] == 2) {
         echo 'actu admin';
     } else {
-        echo 'actu abo';
-
+        echo 'Désolé, vous n\'êtes pas autorisé à lire ce contenu';
     }
 
 ?>
+
+    </body>
+</html>
