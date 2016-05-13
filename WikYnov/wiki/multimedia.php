@@ -36,7 +36,7 @@ if(!isset($_SESSION['session']))
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="actualites.php"> Actualités </a></li>
-                    <li class="active"><a href="#"> Multimédia <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="multimedia.php"> Multimédia <span class="sr-only">(current)</span></a></li>
                     <li><a href="devoirs.php"> Forum/Devoirs </a></li>
                     <li><a href="thematique.php"> Thématiques </a></li>
                     <li><a href="profil.php"> Profil </a></li>
@@ -70,6 +70,7 @@ if(!isset($_SESSION['session']))
     if($_SESSION['session']['role'] == 0) {
         echo 'multi auteur';
         ?>
+        <a href="upload.html"><button>upload</button></a>
         <h1 class="h1">Espace Auteur</h1>
         <br><br><br>
         <p class="upload"><br>Là on met le upload <br><br></p>

@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title> WIKYNOV </title>
+    <title>WikYnov</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
@@ -22,12 +23,12 @@
             </button>
             <a class="navbar-brand" href="#"><img class="image-nav" src="images/logo.png" alt=""></a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="actualites.php"> Actualités </a></li>
                 <li class="active"><a href="#"> Multimédia <span class="sr-only">(current)</span></a></li>
+                <li><a href="devoirs.php"> Forum/Devoir </a></li>
                 <li><a href="thematique.php"> Thématiques </a></li>
                 <li><a href="profil.php"> Profil </a></li>
             </ul>
@@ -36,28 +37,66 @@
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-
 </nav>
 
 <h1>Upload de vos fichiers</h1>
 <div class="container">
     <div class="row">
-        <div class="col-lg-offset-5 col-lg-4">
+        <div align="center">
+            <br><br>
             <form method="POST" action="upload.php" enctype="multipart/form-data">
-                <!-- On limite le fichier à 100Ko -->
-                <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-                Fichier : <input type="file" placeholder=""  name="avatar" class="fichier">
-                <label class="">Votre Article:</label>
-                <br>
-                <textarea name="textupload" placeholder="" class=""></textarea>
-                <br>
-                <input type="submit" class="" name="envoyer" value="Envoyer le fichier">
+                <table>
+                    <tr>
+                        <!-- On limite le fichier à 100Ko -->
+                        <td>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                            <input type="file" placeholder=""  name="avatar" class="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                    <textarea name="editor1" id="editor1" rows="10" cols="80">
+                                    </textarea> <br>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace( 'editor1' );
+                            </script>
+                            <input type="submit" class="" name="envoyer" value="Envoyer le fichier">
+                        </td>
+                    </tr>
+                </table>
             </form>
-
-
         </div>
     </div>
 </div>
+
+<!--Apparition du bouton pour se déconnecter -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">  <!-- Contenue dans l'entete -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title" id="myModalLabel">Êtes-vous sûre de vouloir vous déconnecter ?</h1>
+                <!-- Contenue dans le corps -->
+            </div>
+            <div class="modal-footer">
+                <a href="index.php"><button type="button" class="btngreen">Oui</button></a>
+                <button type="button" class="btnred" data-dismiss="modal">Non</button>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </body>
 </html>

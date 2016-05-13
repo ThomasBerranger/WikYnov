@@ -34,25 +34,26 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikiynov','root','');
             $salt = 'phoenix2429';
             $salt2 = '411salt';
             $mdpConnexion = sha1($salt.($_POST['mdpConnexion']).$salt2);
-            if(!empty($mailConnexion) AND !empty($mdpConnexion))
+            if(!empty($mailConnexion) AND !empty($mdpConnexion) AND !empty($_POST['robot']))
             {
                 $requser = $bdd->prepare("SELECT * FROM coordonnees WHERE mail = ? AND mdp = ?");
                 $requser->execute(array($mailConnexion, $mdpConnexion)) ;
                 $userexist = $requser->rowCount();
                 if ($userexist == 1)
                 {
-                    $userinfo = $requser -> fetch();
-                    $_SESSION['session']['id'] = $userinfo['id'];
-                    $_SESSION['session']['identifiant'] = $userinfo['identifiant'];
-                    $_SESSION['session']['nom'] = $userinfo['nom'];
-                    $_SESSION['session']['mail'] = $userinfo['mail'];
-                    $_SESSION['session']['role'] = $userinfo['role'];
-                    $_SESSION['session']['ip'] = $_SESSION['REMOTE_ADDR'];
-                    header("Location: actualites.php");
+                        $userinfo = $requser->fetch();
+                        $_SESSION['session']['id'] = $userinfo['id'];
+                        $_SESSION['session']['identifiant'] = $userinfo['identifiant'];
+                        $_SESSION['session']['nom'] = $userinfo['nom'];
+                        $_SESSION['session']['mail'] = $userinfo['mail'];
+                        $_SESSION['session']['role'] = $userinfo['role'];
+                        $_SESSION['session']['ip'] = $_SESSION['REMOTE_ADDR'];
+                        header("Location: actualites.php");
+
                 }
                 else
                 {
-                    ?> <div class="erreur"><?php echo'Mauvais identifiant ou mot de passe !';?> </div> <?php
+                    ?> <div class="erreur"><?php echo'Mauvais adresse mail ou mot de passe !';?> </div> <?php
                 }
             }
             else

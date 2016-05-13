@@ -47,60 +47,71 @@ $bdd = new PDO ('mysql:host=localhost;dbname=wikiynov','root','');
                 $identifiantlength = strlen($identifiant);
                 $nomlength = strlen($nom);
                 $maillength = strlen($mail);
-                $mdplength= strlen($mdp);
+                $mdplength = strlen($mdp);
+                if($role <= 1 ) {
+                    if ($identifiantlength <= 30 AND $identifiantlength >= 2) {
+                        if ($nomlength <= 30 AND $nomlength >= 2) {
+                            if ($maillength <= 50 AND $maillength >= 14) {
+                                $syntaxe = "#^[a-zA-Z]+[-]?[a-zA-Z]+[.][a-zA-Z]+[-]?[a-zA-Z]+@ynov[.]com$#";
+                                if (preg_match($syntaxe, $mail)) {
+                                    $reqmail = $bdd->prepare("SELECT * FROM coordonnees WHERE mail = ?");
+                                    $reqmail->execute(array($mail));
+                                    $mailexist = $reqmail->rowCount();
 
-                if($identifiantlength <= 50)
-                {
-                    if($nomlength <= 50)
-                    {
-                        if($maillength <= 50)
-                        {
-                            $syntaxe="#^[a-zA-Z]+[-]?[a-zA-Z]+[.][a-zA-Z]+[-]?[a-zA-Z]+@ynov[.]com$#";
-                            if(preg_match($syntaxe, $mail))
-                            {
-                                $reqmail = $bdd->prepare("SELECT * FROM coordonnees WHERE mail = ?");
-                                $reqmail->execute(array($mail));
-                                $mailexist = $reqmail->rowCount();
+                                    if ($mailexist == 0) {
+                                        if ($mdplength <= 30 AND $mdplength >= 5) {
+                                            $salt = 'phoenix2429';
+                                            $salt2 = '411salt';
+                                            $mdp = sha1($salt . ($_POST['mdp']) . $salt2);
+                                            $mdp2 = sha1($salt . ($_POST['mdp2']) . $salt2);
 
-                                if($mailexist == 0)
-                                {
-                                    if($mdplength <= 25)
-                                    {
-                                        $salt = 'phoenix2429';
-                                        $salt2 = '411salt';
-                                        $mdp = sha1($salt.($_POST['mdp']).$salt2);
-                                        $mdp2 = sha1($salt.($_POST['mdp2']).$salt2);
+                                            if ($mdp == $mdp2) {
+                                                $insertmbr = $bdd->prepare("INSERT INTO coordonnees(identifiant, nom, mail, role, mdp) VALUES(?,?,?,?,?)");
+                                                $insertmbr->execute(array($identifiant, $nom, $mail, $role, $mdp));
+                                                header('Location: connexion.php');
 
-                                        if($mdp == $mdp2)
-                                        {
-                                            $insertmbr = $bdd->prepare("INSERT INTO coordonnees(identifiant, nom, mail, role, mdp) VALUES(?,?,?,?,?)");
-                                            $insertmbr -> execute(array($identifiant, $nom, $mail,$role, $mdp));
-                                            //$_SESSION['membrecree'] = "Votre inscription a bien été effectuée";
-                                            header('Location: connexion.php');
-
+                                            } else {
+                                                ?>
+                                                <div
+                                                    class="erreur"><?php echo 'Vos mots de passe ne sont pas identiques !'; ?> </div> <?php
+                                            }
                                         } else {
-                                            ?> <div class="erreur"><?php echo'Vos mots de passe ne sont pas identiques !';?> </div> <?php
+                                            ?>
+                                            <div
+                                                class="erreur"><?php echo 'Votre mot de passe doit comprendre entre 5 et 30 caractères !'; ?> </div> <?php
                                         }
                                     } else {
-                                        ?> <div class="erreur"><?php echo'Votre mot de passe ne doit pas dépasser les 25 caractères !';?> </div> <?php
+                                        ?>
+                                        <div
+                                            class="erreur"><?php echo 'Cette adresse mail est déja utilisée !'; ?> </div> <?php
                                     }
                                 } else {
-                                    ?> <div class="erreur"><?php echo'Cette adresse mail est déja utilisée !';?> </div> <?php
+                                    ?>
+                                    <div
+                                        class="erreur"><?php echo 'Votre adresse mail ne correspond pas !'; ?> </div> <?php
                                 }
                             } else {
-                                ?> <div class="erreur"><?php echo'Votre adresse mail ne correspond pas !';?> </div> <?php
+                                ?>
+                                <div
+                                    class="erreur"><?php echo 'Votre adresse mail doit comprendre entre 14 et 50 caractères !'; ?> </div> <?php
                             }
                         } else {
-                            ?> <div class="erreur"><?php echo'Votre adresse mail ne doit pas dépasser les 50 caractères !';?> </div> <?php
+                            ?>
+                            <div
+                                class="erreur"><?php echo 'Votre nom doit comprendre entre 2 et 30 caractères !'; ?> </div> <?php
                         }
                     } else {
-                        ?> <div class="erreur"><?php echo'Votre nom ne doit pas dépasser les 50 caractères !';?> </div> <?php
+                        ?>
+                        <div
+                            class="erreur"><?php echo 'Votre identifiant doit comprendre entre 2 et 30 caractères !'; ?> </div> <?php
                     }
                 } else {
-                    ?> <div class="erreur"><?php echo'Votre identifiant ne doit pas dépasser les 50 caractères !';?> </div> <?php
+                    ?>
+                    <div class="erreur"><?php echo'ERREUR D\'INSCRIPTION';?> </div> <?php
                 }
             } else {
-                ?> <div class="erreur"><?php echo'Tous les champs doivent être complétés';?> </div> <?php
+                ?>
+                <div class="erreur"><?php echo'Tous les champs doivent être complétés';?> </div> <?php
             }
 
             ?>

@@ -13,6 +13,7 @@ body
 .img-fond
 {
     position:fixed;
+    background-size: cover;
     top:0;
     left:0;
     z-index:-1;
@@ -65,6 +66,12 @@ body
     border-radius: 5px;
 }
 
+.formul
+{
+    margin: 8px;
+    border-radius: 5px;
+}
+
 .button
 {
     margin: 20px;
@@ -76,7 +83,7 @@ body
 
 .button1
 {
-    margin-top: 60%;
+    margin-top: 56%;
     margin-bottom: 20px;
     margin-right: 20%;
     margin-left: 20pX;
@@ -114,4 +121,16 @@ body
 {
     font-size: large;
     color: rgb(255,45,90);
+}
+
+.pro
+{
+    font-size: x-large;
+    margin: 20px;
+}
+
+.profil
+{
+    margin-top: 50px;
+    margin-left: 50px;
 }

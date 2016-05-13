@@ -1,0 +1,93 @@
+if($user === false){
+        //Could not find a user with that username!
+        //PS: You might want to handle this error in a more user-friendly manner!
+        die("Mauvaise combinaison d'identifiant / mot de passe!");
+    } else{
+        //User account found. Check to see if the given password matches the
+        //password hash that we stored in our users table.
+        //Compare the passwords.
+        $validPassword = password_verify($passwordAttempt, $user['password']);
+        //If $validPassword is TRUE, the login has been successful.
+        if($validPassword){
+            //Provide the user with a login session.
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['logged_in'] = time();
+            $_SESSION['user_rang'] = $user['rang'];
+            //Redirect to our protected page, which we called home.php
+            header('Location: admin/index.php');
+            exit;
+        } else{
+            //$validPassword was FALSE. Passwords do not match.
+            die("Mauvaise combinaison d'identifiant / mot de passe!");
+        }
+    }
+Dans la page connexion
+
+
+<?php
+
+session_start();
+
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
+    header('Location: ../login.php');
+    exit;
+}
+
+?>
+page admin/index
+
+
+<?php var_dump ($_SESSION['user_id']); ?><?php echo ($_SESSION['user_rang']); ?>
+dans admin/index pour savoir en quel rang est connecté le user
+
+<form action="#" method="post">
+    <label>
+        <input type="radio" name="choice" value="1" checked>Choix
+    </label>
+    <label>
+        <input type="radio" name="choice" value="2">Choix 
+    </label>
+</form>
+
+
+
+
+
+
+
+
+REGEX
+^[a-z]+[.][a-z]+@ynov[.]com$
+
+<?php
+session_start();
+$bdd = new PDO ('mysql:host=localhost;dbname=wikynov','root','');
+if(isset($_GET['id']) AND $_GET['id'] > 0 AND isset($_GET['role']) AND $_GET['role'] = 1) {
+$getid = intval($_GET['id']);
+$getrole = intval($_GET['role']);
+$requser = $bdd->prepare('SELECT * FROM coordonnees WHERE id = ? AND role = 1');
+$requser->execute(array($getid, $getrole));
+$userinfo = $requser->fetch();
+?>
+
+
+
+
+
+
+    if($userinfo['role'] == 0) {
+        header("Location: auteur.php?id=".$_SESSION['id']);
+    } elseif($userinfo['role'] == 2) {
+        header("Location: admin.php?id=".$_SESSION['id']);
+    } else {
+        header("Location: abonne.php?id=".$_SESSION['id']);
+    }
+    
+
+
+
+
+?> <div class="erreur"><?php echo'Votre pseudo ne doit pas dépasser les 50 caractères !';?> </div> <?php
+
+
+

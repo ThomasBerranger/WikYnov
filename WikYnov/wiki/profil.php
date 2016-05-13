@@ -39,7 +39,7 @@ if(!isset($_SESSION['session']))
                     <li><a href="multimedia.php"> Multimédia </a></li>
                     <li><a href="devoirs.php"> Forum/Devoirs </a></li>
                     <li><a href="thematique.php"> Thématiques </a></li>
-                    <li class="active"><a href="#"> Profil <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="profil.php"> Profil <span class="sr-only">(current)</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" target="_blank" data-toggle="modal" data-target="#myModal">Déconnexion</a></li>
@@ -74,15 +74,138 @@ if(!isset($_SESSION['session']))
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-    </body>
-    </html>
     <?php
-    if($_SESSION['session']['role'] == 0) {
-        echo 'pro auteur';
-    } elseif($_SESSION['session']['role'] == 2) {
-        echo 'pro admin';
+    if(isset($_SESSION['session']['id']))
+    {
+        if (isset($_POST['newAdmin']) AND !empty($_POST['newAdmin'])) {
+            $reqmail = $bdd->prepare("SELECT * FROM coordonnees WHERE mail = ?");
+            $reqmail->execute(array($_POST['newAdmin']));
+            $newAdminexist = $reqmail->rowCount();
+            if ($newAdminexist == 1) {
+                $newRole = 2;
+                $newAdmin = htmlspecialchars($_POST['newAdmin']);
+                $insertrole = $bdd->prepare("UPDATE coordonnees SET role = ? WHERE mail = ?");
+                $insertrole->execute(array($newRole, $newAdmin));
+
+            } else {
+                ?>
+                <div class="erreur"><?php echo 'Cette adresse mail n\'existe pas !'; ?> </div> <?php
+            }
+        }
+
+        $requser = $bdd->prepare("SELECT * FROM coordonnees WHERE id = ?");
+        $requser->execute(array($_SESSION['session']['id']));
+        $user = $requser->fetch();
+
+        if(isset($_POST['newIdentifiant']) AND !empty($_POST['newIdentifiant']) AND $_POST['newIdentifiant'] != $user['identifiant'])
+        {
+            $newIdentifiant = htmlspecialchars($_POST['newIdentifiant']);
+            $newIdentifiantlength = strlen($newIdentifiant);
+            if($newIdentifiantlength <= 50) {
+                $insertidentifiant = $bdd->prepare("UPDATE coordonnees SET identifiant = ? WHERE id = ?");
+                $insertidentifiant->execute(array($newIdentifiant, $_SESSION['session']['id']));
+            } else {
+                ?> <div class="erreur"><?php echo'Votre nouveau prénom ne doit pas dépasser les 50 caractères !';?> </div> <?php
+            }
+        }
+
+        if(isset($_POST['newNom']) AND !empty($_POST['newNom']) AND $_POST['newNom'] != $user['nom'])
+        {
+            $newNom = htmlspecialchars($_POST['newNom']);
+            $newNomlength = strlen($newNom);
+            if($newNomlength <= 50) {
+                $insertnom = $bdd->prepare("UPDATE coordonnees SET nom = ? WHERE id = ?");
+                $insertnom->execute(array($newNom, $_SESSION['session']['id']));
+            } else {
+                ?> <div class="erreur"><?php echo'Votre nouveau nom ne doit pas dépasser les 50 caractères !';?> </div> <?php
+            }
+        }
+
+        if(isset($_POST['ancienMdp']) AND !empty($_POST['ancienMdp']))
+        {
+            $ancienMdp = ($_POST['ancienMdp']);
+            $newMdp = ($_POST['newMdp']);
+            $mdp = $user['mdp'];
+            $salt = 'phoenix2429';
+            $salt2 = '411salt';
+            $ancienMdp = sha1($salt.($_POST['ancienMdp']).$salt2);
+            $newMdplength = strlen($newMdp);
+            if($ancienMdp == $mdp)
+            {
+                if(isset($_POST['newMdp']) AND isset($_POST['newMdp2']) AND !empty($_POST['newMdp']) AND !empty($_POST['newMdp2']))
+                {
+                    if($newMdplength <= 25)
+                    {
+                        $newMdp = sha1($salt.($_POST['newMdp']).$salt2);
+                        $newMdp2 = sha1($salt.($_POST['newMdp2']).$salt2);
+
+                        if($newMdp == $newMdp2)
+                        {
+                            $insertmdp = $bdd->prepare("UPDATE coordonnees SET mdp = ? WHERE id = ?");
+                            $insertmdp->execute(array($newMdp, $_SESSION['session']['id']));
+
+                        } else {
+                            ?> <div class="erreur"><?php echo'Vos mots de passe ne sont pas identiques !';?> </div> <?php
+                        }
+                    } else {
+                        ?> <div class="erreur"><?php echo'Votre nouveau mot de passe ne doit pas dépasser les 25 caractères !';?> </div> <?php
+                    }
+                } else {
+                    ?> <div class="erreur"><?php echo'Tous les champs doivent être complétés !';?> </div> <?php
+                }
+            } else {
+                ?> <div class="erreur"><?php echo'Mauvais Mot de Passe !';?> </div> <?php
+            }
+
+        }
+
+        ?>
+        <div class="row">
+            <div align="center">
+                <div class="col-md-6">
+                    <h1> Votre Profil :</h1>
+                    <div class="profil" align="left">
+                        <div class="pro"> Votre prénom : <?php echo $_SESSION['session']['identifiant'];?> </div>
+                        <div class="pro"> Votre nom : <?php echo $_SESSION['session']['nom'];?> </div>
+                        <div class="pro"> Votre adresse mail : <?php echo $_SESSION['session']['mail'];?> </div>
+                        <div class="pro"> (Vous ne pouvez pas modifier votre adresse mail !) </div>
+                    </div>
+                    <br>
+        <?php
+            if($_SESSION['session']['role'] == 2) {
+                ?>
+                <form action="" class="formulaire" method="post">
+                    <h1>Ajouter un Administrateur :</h1>
+                    <input type="text" class="formu" id="newAdmin" name="newAdmin" placeholder="Adresse Mail du Nouvel Administrateur" style="text-align:center">
+                    <input class="button" type="submit" value="Ajouter">
+                </form>
+        <?php
+            }
+        ?>
+
+                </div>
+
+                <div class="col-md-6">
+                    <h1>Editer mon profil : </h1> <br><br>
+                    <form action="" class="formulaire" method="post">
+                        <label>Nouveau Prénom</label>
+                        <input type="text" class="formu" id="newIdentifiant" name="newIdentifiant" value="<?php echo $user['identifiant']; ?>" placeholder="Nouveau Prénom" style="text-align:center"><br>
+                        <label>Nouveau Nom</label>
+                        <input type="text" class="formu" id="newNom" name="newNom" value="<?php echo $user['nom']; ?>" placeholder="Nouveau Nom" style="text-align:center"><br>
+                        <input type="password" class="formu" id="ancienMdp" name="ancienMdp" placeholder="Ancien Mot de Passe" style="text-align:center"><br>
+                        <input type="password" class="formu" id="newMdp" name="newMdp" placeholder="Nouveau Mot de Passe" style="text-align:center"><br>
+                        <input type="password" class="formu" id="newMdp2" name="newMdp2" placeholder="Confirmation" style="text-align:center"><br>
+                        <input class="button" type="submit" value="Modifier mon Profil">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <?php
     } else {
-        echo 'pro abo';
+        header("Location: connexion.php");
     }
 
-?>
+    ?>
+
+    </body>
+    </html>

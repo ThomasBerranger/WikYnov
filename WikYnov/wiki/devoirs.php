@@ -37,7 +37,7 @@ if(!isset($_SESSION['session']))
                 <ul class="nav navbar-nav">
                     <li><a href="actualites.php"> Actualités </a></li>
                     <li><a href="multimedia.php"> Multimédia </a></li>
-                    <li class="active"><a href="#"> Forum/Devoir <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="devoirs.php"> Forum/Devoir <span class="sr-only">(current)</span></a></li>
                     <li><a href="thematique.php"> Thématiques </a></li>
                     <li><a href="profil.php"> Profil </a></li>
                 </ul>
